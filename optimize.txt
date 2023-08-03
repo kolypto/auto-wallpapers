@@ -1,0 +1,20 @@
+Compress large JPGs.
+Note that some of them are TIFFs :)
+
+$ find gallery-dl -type f -iname '*.jpg' -size +10M -print0 | xargs -0 mogrify -quality 90
+
+
+Recompress all PNGs as JPGs:
+$ find gallery-dl -iname '*.png' | parallel mogrify -format jpg '{}'
+$ find gallery-dl -iname '*.png' -delete
+
+
+
+Remove all images that are too small
+Exceptions: pixel-art, gif
+$ find gallery-dl/ -not -path "gallery-dl/deviantart/Tags/pixelart/*" -and -not -name '*.gif' -type f -size '-100k' -delete
+
+
+
+Git commit directories one by one (because GitHub would reject large commits):
+$ for d in (find gallery-dl -type d -links 2) ; echo "$d" ; git add "$d" && git commit -m "$d" && git push; end

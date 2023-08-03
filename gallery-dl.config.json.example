@@ -1,0 +1,16 @@
+{
+    "extractor":
+    {
+        "base-directory": "./gallery-dl/",
+        "sleep": [0.0, 5.0],
+        "sleep-request": [0.0, 5.0],
+        "sleep-extractor": [0.0, 5.0],
+        "retries": 2,
+        "deviantart":
+        {
+            "client-id": 20734,
+            "client-secret": "63fd41058b2067b6e44118795d7ff45d",
+            "mature": true
+        }
+    }
+}
