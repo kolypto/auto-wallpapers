@@ -8,6 +8,7 @@ cp images-removed.list{,.old} || touch images-removed.list.old
 (cat images-removed.list ; fgrep -v -x -f images-currently-present.list images-ever-seen.list) | sort | uniq  > images-removed.list
 
 poetry run gallery-dl -c 'gallery-dl.config.json' --range 1-200 'https://www.deviantart.com/tag/digitalart' || true
+poetry run gallery-dl -c 'gallery-dl.config.json' --range 1-200 'https://www.deviantart.com/tag/digitalpainting' || true
 poetry run gallery-dl -c 'gallery-dl.config.json' --range 1-200 'https://www.deviantart.com/tag/fantasy' || true
 poetry run gallery-dl -c 'gallery-dl.config.json' --range 1-200 'https://www.deviantart.com/tag/artwork' || true
 poetry run gallery-dl -c 'gallery-dl.config.json' --range 1-200 'https://www.deviantart.com/tag/scifi' || true
