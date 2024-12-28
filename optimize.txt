@@ -1,3 +1,7 @@
+Unzip archives:
+
+./unzip-archives.sh
+
 Compress large JPGs.
 Note that some of them are TIFFs :)
 
