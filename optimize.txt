@@ -9,7 +9,7 @@ $ find gallery-dl -type f -iname '*.jpg' -size +10M -print0 | xargs -0 mogrify -
 
 
 Recompress all PNGs as JPGs:
-$ find gallery-dl -iname '*.png' | parallel mogrify -format jpg '{}'
+$ find gallery-dl -iname '*.png' | parallel mogrify -transparent black -background black -flatten -format jpg '{}'
 $ find gallery-dl -iname '*.png' -delete
 
 
